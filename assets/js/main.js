@@ -398,31 +398,26 @@ function initScrollAnimations() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 7. Download Counter                                                        */
+/* 7. Global Download Counter (Online Synced + 1 Count per Device)             */
 /* -------------------------------------------------------------------------- */
 function initDownloadCounter() {
-  const baseCount = 0;
-  const storageKey = 'futureme_download_count_v1';
+  const API_GET = 'https://abacus.jasoncameron.dev/get/futureme-official.app/apk_download_v1';
+  const API_HIT = 'https://abacus.jasoncameron.dev/hit/futureme-official.app/apk_download_v1';
+  const DEVICE_FLAG_KEY = 'futureme_has_downloaded_device';
+  const CACHE_COUNT_KEY = 'futureme_cached_download_count';
 
-  // Clear legacy storage key if present
-  if (localStorage.getItem('futureme_download_count')) {
-    localStorage.removeItem('futureme_download_count');
-  }
-
-  let currentCount = parseInt(localStorage.getItem(storageKey), 10);
-  if (isNaN(currentCount) || currentCount < baseCount) {
-    currentCount = baseCount;
-    localStorage.setItem(storageKey, currentCount);
-  }
+  let currentCount = parseInt(localStorage.getItem(CACHE_COUNT_KEY), 10) || 0;
 
   function formatNumber(num) {
-    return num.toLocaleString('id-ID');
+    return (num || 0).toLocaleString('id-ID');
   }
 
-  function updateCounterDisplay() {
+  function updateCounterDisplay(num) {
+    currentCount = num;
+    localStorage.setItem(CACHE_COUNT_KEY, num);
     const counterElements = document.querySelectorAll('.download-counter');
     counterElements.forEach(el => {
-      el.textContent = formatNumber(currentCount);
+      el.textContent = formatNumber(num);
       el.classList.add('transition-transform', 'duration-200', 'scale-110');
       setTimeout(() => {
         el.classList.remove('scale-110');
@@ -430,16 +425,50 @@ function initDownloadCounter() {
     });
   }
 
-  // Initial update
-  updateCounterDisplay();
+  // Initial render from local cache or 0
+  updateCounterDisplay(currentCount);
 
-  // Listen to download action clicks
+  // Fetch real-time count from global API (syncs across laptop, HP, & all devices)
+  fetch(API_GET)
+    .then(res => {
+      if (!res.ok) throw new Error('Key not found yet');
+      return res.json();
+    })
+    .then(data => {
+      if (typeof data.value === 'number') {
+        updateCounterDisplay(data.value);
+      }
+    })
+    .catch(() => {
+      // If key not created yet on server, it means 0 downloads so far
+    });
+
+  // Handle download clicks: 1 device only counts 1 time!
   const downloadActionButtons = document.querySelectorAll('.download-trigger-action');
   downloadActionButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      currentCount += 1;
-      localStorage.setItem(storageKey, currentCount);
-      updateCounterDisplay();
+      const alreadyDownloaded = localStorage.getItem(DEVICE_FLAG_KEY) === 'true';
+
+      if (!alreadyDownloaded) {
+        // Mark this device as counted so it will not increment again
+        localStorage.setItem(DEVICE_FLAG_KEY, 'true');
+
+        // Increment globally online
+        fetch(API_HIT)
+          .then(res => res.json())
+          .then(data => {
+            if (typeof data.value === 'number') {
+              updateCounterDisplay(data.value);
+            }
+          })
+          .catch(() => {
+            // Offline fallback
+            updateCounterDisplay(currentCount + 1);
+          });
+      } else {
+        // Already downloaded on this device: file still downloads,
+        // but counter does NOT increment again!
+      }
     });
   });
 }
