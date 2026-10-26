@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FutureMe - Ngobrol dengan versi terbaik dirimu di masa depan</title>
+  <meta name="description" content="FutureMe adalah jurnal refleksi interaktif yang menemanimu menulis, bertanya, dan bertumbuh. 100% offline-first, privat, dan bebas tekanan.">
+  <meta name="keywords" content="FutureMe, Jurnal Refleksi, AI Futures, Diary Offline, Pohon Pertumbuhan, Kapsul Waktu, Self Reflection">
+  <meta name="author" content="FutureMe Team">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FutureMe - Ngobrol dengan versi terbaik dirimu di masa depan">
+  <meta property="og:description" content="Jurnal refleksi interaktif yang menemanimu menulis, bertanya, dan bertumbuh. Personal, privat, dan bebas tekanan.">
+  <meta property="og:image" content="assets/images/logo-futureme.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo-futureme.png">
+  <link rel="apple-touch-icon" href="assets/images/logo-futureme.png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              main: '#F3F8FE',
+              end: '#E4EEFB',
+              surface: '#FFFFFF',
+              border: '#D6E4F5',
+              primary: '#8DB8E8',
+              soft: '#DCE9FA',
+              navy: '#1E3A5F',
+              body: '#5A7090',
+              sprout: '#6BBF6A',
+              glow: '#B9D4F5',
+            }
+          },
+          fontFamily: {
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            sans: ['Poppins', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="text-brand-body antialiased selection:bg-brand-soft selection:text-brand-navy">
+
+  <!-- Top Ambient Glow Spots -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[360px] bg-[#B9D4F5]/30 blur-[130px] rounded-full pointer-events-none -z-10 animate-pulse-glow"></div>
+  <div class="fixed top-96 left-12 w-[420px] h-[420px] bg-[#DCE9FA]/40 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+  <div class="fixed top-96 right-12 w-[420px] h-[420px] bg-[#E4EEFB]/50 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+
+  <!-- MAIN WRAPPER CONTAINER: Match Mindly's spacious frame with soft outer glow -->
+  <div class="max-w-[1400px] mx-auto px-3 sm:px-5 lg:px-8 py-3 sm:py-6">
+
+    <!-- ==================================================================== -->
+    <!-- HERO FRAME CONTAINER                                                 -->
+    <!-- ==================================================================== -->
+    <div class="hero-outer-frame rounded-[32px] sm:rounded-[44px] md:rounded-[52px] relative overflow-hidden transition-all duration-300">
+
+      <!-- ================================================================== -->
+      <!-- NAVBAR                                                             -->
+      <!-- ================================================================== -->
+      <header class="relative z-30 px-5 sm:px-8 lg:px-12 py-5 sm:py-6 flex items-center justify-between">
+        
+        <!-- Logo Left -->
+        <a href="#" class="flex items-center gap-2.5 group">
+          <div class="w-10 h-10 rounded-2xl overflow-hidden bg-brand-navy p-1 shadow-md shadow-brand-navy/15 transition-transform duration-300 group-hover:scale-105 border border-brand-border">
+            <img src="assets/images/logo-futureme.png" alt="Logo FutureMe" class="w-full h-full object-cover rounded-xl">
+          </div>
+          <div class="flex items-center">
+            <span class="text-xl sm:text-2xl font-semibold tracking-tight text-brand-navy">FutureMe</span>
+            <span class="text-brand-sprout text-xs ml-1 font-bold">🌱</span>
+          </div>
+        </a>
+
+        <!-- Pill Nav Center (Desktop) -->
+        <nav class="hidden md:flex items-center glass-nav p-1.5 rounded-full shadow-sm">
+          <a href="#fitur" class="desktop-nav-item text-xs lg:text-sm font-medium px-4 lg:px-5 py-2 rounded-full text-brand-body hover:text-brand-navy transition-all duration-200">Fitur</a>
+          <a href="#galeri" class="desktop-nav-item text-xs lg:text-sm font-medium px-4 lg:px-5 py-2 rounded-full text-brand-body hover:text-brand-navy transition-all duration-200">Galeri</a>
+          <a href="#cara-kerja" class="desktop-nav-item text-xs lg:text-sm font-medium px-4 lg:px-5 py-2 rounded-full text-brand-body hover:text-brand-navy transition-all duration-200">Cara Kerja</a>
+          <a href="#privasi" class="desktop-nav-item text-xs lg:text-sm font-medium px-4 lg:px-5 py-2 rounded-full text-brand-body hover:text-brand-navy transition-all duration-200">Privasi</a>
+          <a href="#faq" class="desktop-nav-item text-xs lg:text-sm font-medium px-4 lg:px-5 py-2 rounded-full text-brand-body hover:text-brand-navy transition-all duration-200">FAQ</a>
+        </nav>
+
+        <!-- Right Action Button & Mobile Hamburger -->
+        <div class="flex items-center gap-3">
+          <a href="#unduh" class="download-trigger hidden sm:inline-flex items-center gap-1.5 bg-brand-navy hover:bg-[#152B47] text-white px-5 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-medium shadow-md shadow-brand-navy/15 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0">
+            <span>Unduh Aplikasi</span>
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" type="button" aria-label="Buka menu navigasi" class="md:hidden w-10 h-10 rounded-full flex items-center justify-center bg-white/80 border border-brand-border text-brand-navy shadow-sm">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- ================================================================== -->
+      <!-- HERO CONTENT AREA                                                  -->
+      <!-- ================================================================== -->
+      <section class="relative pt-6 sm:pt-10 md:pt-14 pb-12 sm:pb-20 px-4 sm:px-8 lg:px-12">
+        
+        <!-- ROTATING CIRCULAR BADGE (Top Right - exactly like Mindly) -->
+        <div class="absolute top-4 right-4 sm:top-8 sm:right-10 md:right-16 z-20 pointer-events-none select-none">
+          <div class="relative w-28 h-28 sm:w-32 sm:h-32 flex items-center justify-center">
+            <!-- Rotating SVG Circular Text -->
+            <svg class="w-full h-full animate-spin-slow" viewBox="0 0 160 160">
+              <defs>
+                <path id="badgeCirclePath" d="M 80, 80 m -60, 0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0" fill="none" />
+              </defs>
+              <text font-family="'Poppins', sans-serif" font-size="10.8" font-weight="600" fill="#5A7090" letter-spacing="2.6">
+                <textPath href="#badgeCirclePath" startOffset="0%">
+                  JURNAL REFLEKSI • TUMBUH SETIAP HARI • 
+                </textPath>
+              </text>
+            </svg>
+            <!-- Center 4-Point Star -->
+            <div class="absolute inset-0 flex items-center justify-center text-brand-navy">
+              <svg class="w-5 h-5 text-brand-navy" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0L14.2 9.8L24 12L14.2 14.2L12 24L9.8 14.2L0 12L9.8 9.8L12 0Z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- HERO HEADLINE & CTA (Center) -->
+        <div class="text-center max-w-4xl mx-auto relative z-20">
+          
+          <!-- Pill Mini Tag above headline -->
+          <div class="inline-flex items-center gap-2 bg-brand-soft/70 border border-brand-border px-3.5 py-1.5 rounded-full text-xs font-medium text-brand-navy mb-5 shadow-xs">
+            <span class="w-2 h-2 rounded-full bg-brand-sprout animate-pulse"></span>
+            <span>Versi 1.0 Kini Tersedia • 100% Offline-First</span>
+          </div>
+
+          <!-- Elegant Serif Headline: Line 1 Regular, Line 2 Italic -->
+          <h1 class="font-editorial text-4xl sm:text-6xl md:text-7xl lg:text-[76px] text-brand-navy tracking-tight leading-[1.08] sm:leading-[1.05]">
+            <span class="block font-normal">Ngobrol dengan versi terbaik</span>
+            <span class="block italic font-normal tracking-tight text-brand-navy">dirimu di masa depan.</span>
+          </h1>
+
+          <!-- Sub-headline -->
+          <p class="text-brand-body text-sm sm:text-base md:text-lg max-w-2xl mx-auto mt-5 sm:mt-6 leading-relaxed font-normal">
+            FutureMe adalah jurnal refleksi interaktif yang menemanimu menulis, bertanya, dan bertumbuh. Personal, privat, dan bebas tekanan.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mt-7 sm:mt-8">
+            <!-- Main solid button -->
+            <a href="#unduh" class="download-trigger btn-primary px-7 py-3.5 rounded-full text-sm font-medium flex items-center gap-2 shadow-lg shadow-brand-navy/15">
+              <span>Unduh Gratis</span>
+              <span class="text-base transition-transform group-hover:translate-x-1">→</span>
+            </a>
+            <!-- Outline / Play button -->
+            <a href="#fitur" class="btn-secondary px-6 py-3.5 rounded-full text-sm font-medium flex items-center gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-brand-soft text-brand-navy flex items-center justify-center text-[10px] pl-0.5 font-bold">▶</span>
+              <span>Lihat Fitur</span>
+            </a>
+          </div>
+
+          <!-- Download Counter Badge -->
+          <div class="inline-flex items-center gap-2 bg-white/80 border border-brand-border/80 px-4 py-1.5 rounded-full text-xs text-brand-body shadow-xs mt-5">
+            <span class="w-2 h-2 rounded-full bg-brand-sprout animate-pulse"></span>
+            <span>Sudah terdownload: <strong class="download-counter text-brand-navy font-semibold">0</strong> kali</span>
+          </div>
+        </div>
+
+        <!-- ================================================================ -->
+        <!-- HERO VISUAL COMPOSITION: CONNECTING CURVED LINES & MOCKUP         -->
+        <!-- ================================================================ -->
+        <div class="relative mt-8 sm:mt-12 md:mt-16 max-w-6xl xl:max-w-7xl mx-auto flex flex-col items-center justify-center">
+
+          <!-- SVG CONNECTING CURVED LINES (Desktop only - mirrors Mindly splines) -->
+          <svg class="absolute inset-0 w-full h-full pointer-events-none hidden lg:block -z-0" viewBox="0 0 1100 650" fill="none" preserveAspectRatio="none">
+            <!-- Left Spline: from floating card down to phone left -->
+            <path d="M 230 140 C 330 160, 360 270, 435 320" stroke="#CBDCF2" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.9" />
+            <circle cx="230" cy="140" r="4.5" fill="#8DB8E8" />
+            <circle cx="435" cy="320" r="3.5" fill="#8DB8E8" />
+
+            <!-- Right Spline: from floating card down to phone right -->
+            <path d="M 870 170 C 770 190, 740 280, 665 330" stroke="#CBDCF2" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.9" />
+            <circle cx="870" cy="170" r="4.5" fill="#8DB8E8" />
+            <circle cx="665" cy="330" r="3.5" fill="#8DB8E8" />
+          </svg>
+
+          <!-- CENTERPIECE: PHONE MOCKUP WITH SCREENSHOT + ORBITING GLASS CARDS -->
+          <div class="relative z-10 w-full max-w-[320px] sm:max-w-[360px] md:max-w-[390px] mx-auto py-2 sm:py-6">
+
+            <!-- Soft glow ring behind phone -->
+            <div class="absolute inset-0 bg-[#8DB8E8]/35 blur-[70px] rounded-full scale-110 pointer-events-none"></div>
+
+            <!-- 3D-Look Orbiting Cards Halo (Tightly framed around phone to avoid any overlap) -->
+            
+            <!-- Orbit Card 1: Top-Left (Rencana) -->
+            <div class="absolute -left-3 sm:-left-6 md:-left-8 top-32 sm:top-36 z-30 animate-float-gentle scale-90 sm:scale-100 origin-left" style="animation-delay: 0.2s;">
+              <div class="glass-orbit px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-2xl flex items-center gap-2 shadow-lg border border-white/90">
+                <div class="w-6 h-6 rounded-xl bg-[#DCE9FA] text-brand-navy flex items-center justify-center text-xs font-bold">
+                  ✓
+                </div>
+                <div class="text-left">
+                  <p class="text-[11px] sm:text-xs font-semibold text-brand-navy">Rencana</p>
+                  <p class="text-[9px] sm:text-[10px] text-brand-body">Target & To-Do</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Orbit Card 2: Bottom-Left (Tanya Masa Depan) -->
+            <div class="absolute -left-2 sm:-left-4 md:-left-6 bottom-16 sm:bottom-20 z-30 animate-float-gentle scale-90 sm:scale-100 origin-left" style="animation-delay: 1.5s;">
+              <div class="glass-orbit px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-2xl flex items-center gap-2 shadow-xl border border-white/90">
+                <div class="w-6 h-6 rounded-xl bg-[#E8EDFD] text-[#3B66A4] flex items-center justify-center text-xs">
+                  💬
+                </div>
+                <div class="text-left">
+                  <p class="text-[11px] sm:text-xs font-semibold text-brand-navy">Tanya Masa Depan</p>
+                  <p class="text-[9px] sm:text-[10px] text-brand-body">Sudut pandang bijak</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Orbit Card 3: Top-Right (Kapsul Waktu) -->
+            <div class="absolute -right-3 sm:-right-6 md:-right-8 top-36 sm:top-40 z-30 animate-float-gentle scale-90 sm:scale-100 origin-right" style="animation-delay: 0.8s;">
+              <div class="glass-orbit px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-2xl flex items-center gap-2 shadow-lg border border-white/90">
+                <div class="w-6 h-6 rounded-xl bg-[#FEF3C7] text-[#D97706] flex items-center justify-center text-xs">
+                  ⏳
+                </div>
+                <div class="text-left">
+                  <p class="text-[11px] sm:text-xs font-semibold text-brand-navy">Kapsul Waktu</p>
+                  <p class="text-[9px] sm:text-[10px] text-brand-body">Kunci pesan nanti</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Orbit Card 4: Bottom-Right (Pohon Pertumbuhan) -->
+            <div class="absolute -right-2 sm:-right-4 md:-right-6 bottom-12 sm:bottom-16 z-30 animate-float-gentle scale-90 sm:scale-100 origin-right" style="animation-delay: 2.2s;">
+              <div class="glass-orbit px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-2xl flex items-center gap-2 shadow-xl border border-white/90">
+                <div class="w-6 h-6 rounded-xl bg-[#E8F7E8] text-brand-sprout flex items-center justify-center text-xs">
+                  🌱
+                </div>
+                <div class="text-left">
+                  <p class="text-[11px] sm:text-xs font-semibold text-brand-navy">Pohon Pertumbuhan</p>
+                  <p class="text-[9px] sm:text-[10px] text-brand-body">Makin lebat bertumbuh</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Decorative Floating Sprout Emblems & Sparkles -->
+            <div class="absolute -top-3 right-1/4 z-20 text-brand-sprout text-xl animate-float-gentle">🌱</div>
+            <div class="absolute bottom-6 left-1/4 z-20 text-brand-primary text-base animate-pulse">✦</div>
+
+            <!-- THE PHONE MOCKUP CONTAINER -->
+            <div class="phone-mockup relative mx-auto w-full max-w-[280px] sm:max-w-[320px]">
+              
+              <!-- Dynamic Island / Speaker notch -->
+              <div class="absolute top-2.5 left-1/2 -translate-x-1/2 w-28 h-4 bg-brand-navy rounded-full z-20 flex items-center justify-between px-3">
+                <div class="w-2 h-2 rounded-full bg-[#3B5A82]"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-[#122338] border border-[#2B4769]"></div>
+              </div>
+
+              <!-- Phone Screenshot: Beranda Screen -->
+              <div class="relative overflow-hidden bg-brand-main pt-1">
+                <img 
+                  src="assets/images/beranda.png" 
+                  alt="Tampilan Beranda FutureMe" 
+                  class="w-full h-auto object-cover block select-none"
+                  loading="eager"
+                >
+              </div>
+
+              <!-- Bottom home bar -->
+              <div class="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-32 h-1 bg-brand-navy/60 rounded-full z-20"></div>
+            </div>
+          </div>
+
+          <!-- FLOATING GLASS CARDS CONTAINER (Elevated up and spaced wide on desktop to prevent any overlap) -->
+          <div class="w-full max-w-lg lg:max-w-none mt-6 lg:mt-0 grid grid-cols-1 sm:grid-cols-2 lg:block gap-4">
+
+            <!-- FLOATING CARD LEFT (Tilted -5deg, glassmorphism, elevated) -->
+            <div class="lg:absolute lg:left-0 xl:left-4 lg:top-4 xl:top-6 z-20 animate-float-left">
+              <div class="glass-card p-4 sm:p-5 rounded-3xl transition-transform duration-300 hover:rotate-0 hover:scale-105 max-w-full lg:max-w-[250px] xl:max-w-[270px]">
+                <div class="flex items-center gap-3 mb-2">
+                  <!-- Soundwave / Mic Icon -->
+                  <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-2xl bg-brand-soft flex items-center justify-center text-brand-navy shadow-inner">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="12" y1="2" x2="12" y2="22"></line>
+                      <line x1="8" y1="6" x2="8" y2="18"></line>
+                      <line x1="4" y1="10" x2="4" y2="14"></line>
+                      <line x1="16" y1="6" x2="16" y2="18"></line>
+                      <line x1="20" y1="10" x2="20" y2="14"></line>
+                    </svg>
+                  </div>
+                  <span class="text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase text-brand-body">Dikte & Suara</span>
+                </div>
+                <h3 class="text-xs sm:text-sm font-semibold text-brand-navy leading-snug">Tulis tanpa tekanan.</h3>
+                <p class="text-[11px] sm:text-xs text-brand-body mt-1 leading-relaxed">Ketik atau bicara, ceritamu tertulis otomatis.</p>
+              </div>
+            </div>
+
+            <!-- FLOATING CARD RIGHT (Tilted +5deg, glassmorphism, elevated) -->
+            <div class="lg:absolute lg:right-0 xl:right-4 lg:top-8 xl:top-10 z-20 animate-float-right">
+              <div class="glass-card p-4 sm:p-5 rounded-3xl transition-transform duration-300 hover:rotate-0 hover:scale-105 max-w-full lg:max-w-[250px] xl:max-w-[270px]">
+                <div class="flex items-center gap-3 mb-2">
+                  <!-- Shield / Security Icon -->
+                  <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-2xl bg-brand-soft flex items-center justify-center text-brand-navy shadow-inner">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                      <path d="M9 12l2 2 4-4"></path>
+                    </svg>
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-brand-sprout"></span>
+                    <span class="text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase text-brand-navy">100% Lokal</span>
+                  </div>
+                </div>
+                <h3 class="text-xs sm:text-sm font-semibold text-brand-navy leading-snug">Aman di HP-mu.</h3>
+                <p class="text-[11px] sm:text-xs text-brand-body mt-1 leading-relaxed">Semua data tersimpan lokal, tanpa server.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ================================================================ -->
+        <!-- HERO BOTTOM DETAILS: MATCH MINDLY'S CORNER ANCHORS               -->
+        <!-- ================================================================ -->
+        <div class="mt-12 sm:mt-16 pt-6 border-t border-brand-border/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left relative z-20">
+          
+          <!-- Bottom Left: Line + 100% gratis & offline-first + Icons -->
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-0.5 bg-brand-border hidden sm:block"></div>
+            <div>
+              <p class="text-xs font-semibold text-brand-navy tracking-tight">100% gratis & offline-first</p>
+              <div class="flex items-center gap-2 mt-1">
+                <!-- Shield Icon -->
+                <span class="inline-flex items-center gap-1 text-[11px] text-brand-body">
+                  <svg class="w-3.5 h-3.5 text-brand-navy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                  Privasi Lokal
+                </span>
+                <span class="text-brand-border">•</span>
+                <!-- Wifi Off Icon -->
+                <span class="inline-flex items-center gap-1 text-[11px] text-brand-body">
+                  <svg class="w-3.5 h-3.5 text-brand-navy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                    <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path>
+                    <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path>
+                    <path d="M10.71 5.05A16 16 0 0 1 22.58 9"></path>
+                    <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"></path>
+                    <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                    <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                  </svg>
+                  Tanpa Internet
+                </span>
+                <span class="text-brand-border">•</span>
+                <!-- Sprout Icon -->
+                <span class="inline-flex items-center gap-1 text-[11px] text-brand-body">
+                  🌱 Bebas Iklan
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Right: Star + Short Line + Tagline -->
+          <div class="flex items-center gap-2.5 sm:text-right">
+            <svg class="w-4 h-4 text-brand-primary" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0L14.2 9.8L24 12L14.2 14.2L12 24L9.8 14.2L0 12L9.8 9.8L12 0Z"/>
+            </svg>
+            <div class="w-6 h-0.5 bg-brand-border hidden sm:block"></div>
+            <p class="text-xs sm:text-sm font-medium text-brand-body">Lebih tenang. Lebih jelas.</p>
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+    <!-- /HERO FRAME CONTAINER -->
+
+    <!-- ==================================================================== -->
+    <!-- SECTION 1: FITUR (BENTO GRID 7 FITUR)                                -->
+    <!-- ==================================================================== -->
+    <section id="fitur" class="py-16 sm:py-24 px-2 sm:px-4 reveal-on-scroll">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        <span class="inline-block text-xs font-semibold uppercase tracking-wider text-brand-navy bg-brand-soft px-3.5 py-1.5 rounded-full mb-3 border border-brand-border">
+          Fitur Lengkap
+        </span>
+        <h2 class="font-editorial text-3xl sm:text-4xl md:text-5xl text-brand-navy tracking-tight">
+          Dirancang untuk menemanimu bertumbuh, <span class="italic font-normal">tanpa tekanan.</span>
+        </h2>
+        <p class="text-brand-body text-sm sm:text-base mt-4 leading-relaxed">
+          Bukan sekadar buku harian pasif. FutureMe memadukan refleksi terpandu, fleksibilitas multimedia, dan privasi penuh di ponselmu.
+        </p>
+      </div>
+
+      <!-- Bento Grid (7 Fitur) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- FITUR 1 (Large Card - 2 cols on desktop): Dialog & Refleksi Personal (AI Futures) -->
+        <div class="lg:col-span-2 bento-card bg-white rounded-3xl p-7 sm:p-8 border border-brand-border relative overflow-hidden group">
+          <div class="absolute -right-10 -bottom-10 w-44 h-44 bg-brand-soft/50 rounded-full blur-2xl pointer-events-none group-hover:bg-brand-primary/20 transition-all duration-300"></div>
+          
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-12 h-12 rounded-2xl bg-brand-soft text-brand-navy flex items-center justify-center text-xl shadow-xs">
+              ✨
+            </div>
+            <span class="text-xs font-semibold px-3 py-1 bg-brand-soft/70 text-brand-navy rounded-full border border-brand-border">
+              AI Futures
+            </span>
+          </div>
+
+          <h3 class="text-xl sm:text-2xl font-semibold text-brand-navy mb-3">1. Dialog & Refleksi Personal (AI Futures)</h3>
+          <p class="text-sm sm:text-base text-brand-body leading-relaxed mb-6">
+            Membangun komunikasi dua arah yang hangat dengan proyeksi dirimu di masa depan. Si Futures hadir dengan empati, bukan jawaban robotik kaku.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="bg-brand-main p-4 rounded-2xl border border-brand-border/70">
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class="w-2 h-2 rounded-full bg-brand-sprout"></span>
+                <h4 class="text-xs sm:text-sm font-semibold text-brand-navy">Pertanyaan Kontekstual</h4>
+              </div>
+              <p class="text-xs text-brand-body leading-relaxed">
+                AI menyusun pertanyaan harian berdasarkan data diri, gaya kepribadian yang kamu pilih, dan rangkuman 3 cerita terakhirmu (bukan template kaku).
+              </p>
+            </div>
+
+            <div class="bg-brand-main p-4 rounded-2xl border border-brand-border/70">
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class="w-2 h-2 rounded-full bg-brand-primary"></span>
+                <h4 class="text-xs sm:text-sm font-semibold text-brand-navy">Tanya Masa Depan (Reverse Q&A)</h4>
+              </div>
+              <p class="text-xs text-brand-body leading-relaxed">
+                Wadah saat kamu bimbang atau overthinking untuk mendapatkan sudut pandang yang lebih tenang, bijak, dan menyejukkan.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FITUR 2: Fleksibilitas Bercerita (Teks & Suara) -->
+        <div class="bento-card bg-white rounded-3xl p-7 sm:p-8 border border-brand-border relative overflow-hidden group">
+          <div class="w-12 h-12 rounded-2xl bg-brand-soft text-brand-navy flex items-center justify-center text-xl mb-5 shadow-xs">
+            🎙️
+          </div>
+          <span class="text-xs font-semibold px-3 py-1 bg-brand-soft/70 text-brand-navy rounded-full border border-brand-border inline-block mb-3">
+            Teks & Audio
+          </span>
+          <h3 class="text-lg sm:text-xl font-semibold text-brand-navy mb-2.5">2. Fleksibilitas Bercerita</h3>
+          <p class="text-xs sm:text-sm text-brand-body leading-relaxed mb-4">
+            Curahkan isi hatimu dengan cara ternyaman saat ini, kapan pun dan di mana pun.
+          </p>
+          <ul class="space-y-3 text-xs text-brand-body">
+            <li class="flex items-start gap-2 bg-brand-main p-3 rounded-xl border border-brand-border/50">
+              <span class="text-brand-navy font-bold">•</span>
+              <div><strong class="text-brand-navy font-semibold">Dikte Bicara:</strong> Kata-kata yang diucapkan langsung tertulis otomatis ke kolom cerita secara gratis (real-time).</div>
+            </li>
+            <li class="flex items-start gap-2 bg-brand-main p-3 rounded-xl border border-brand-border/50">
+              <span class="text-brand-navy font-bold">•</span>
+              <div><strong class="text-brand-navy font-semibold">Voice Note:</strong> Merekam suara secara offline untuk disimpan dan diputar kembali di kartu riwayat.</div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- FITUR 3: Rekam Jejak Multimedia -->
+        <div class="bento-card bg-white rounded-3xl p-7 sm:p-8 border border-brand-border relative overflow-hidden group">
+          <div class="w-12 h-12 rounded-2xl bg-brand-soft text-brand-navy flex items-center justify-center text-xl mb-5 shadow-xs">
+            🎵
+          </div>
+          <span class="text-xs font-semibold px-3 py-1 bg-brand-soft/70 text-brand-navy rounded-full border border-brand-border inline-block mb-3">
+            Multimedia
+          </span>
+          <h3 class="text-lg sm:text-xl font-semibold text-brand-navy mb-2.5">3. Rekam Jejak Multimedia</h3>
+          <p class="text-xs sm:text-sm text-brand-body leading-relaxed mb-4">
+            Setiap hari punya rasa, nada, dan visual yang pantas dikenang kembali.
+          </p>
+          <ul class="space-y-3 text-xs text-brand-body">
+            <li class="flex items-start gap-2 bg-brand-main p-3 rounded-xl border border-brand-border/50">
+              <span class="text-brand-navy font-bold">•</span>
+              <div><strong class="text-brand-navy font-semibold">Soundtrack Hidup:</strong> Mendeteksi otomatis lagu yang sedang kamu dengarkan saat menulis jurnal.</div>
+            </li>
+            <li class="flex items-start gap-2 bg-brand-main p-3 rounded-xl border border-brand-border/50">
+              <span class="text-brand-navy font-bold">•</span>
+              <div><strong class="text-brand-navy font-semibold">Foto & Klip 1 Detik:</strong> Lampirkan foto harian atau video singkat untuk dikompilasi jadi kilas balik perjalanan hidupmu.</div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- FITUR 4: Manajemen Rencana (To-Do List) -->
+        <div class="bento-card bg-white rounded-3xl p-7 sm:p-8 border border-brand-border relative overflow-hidden group">
+          <div class="w-12 h-12 rounded-2xl bg-brand-soft text-brand-navy flex items-center justify-center text-xl mb-5 shadow-xs">
+            📋
+          </div>
+          <span class="text-xs font-semibold px-3 py-1 bg-brand-soft/70 text-brand-navy rounded-full border border-brand-border inline-block mb-3">
+            Target & Rutinitas
+          </span>
+          <h3 class="text-lg sm:text-xl font-semibold text-brand-navy mb-2.5">4. Manajemen Rencana (To-Do)</h3>
+          <p class="text-xs sm:text-sm text-brand-body leading-relaxed mb-4">
+            Langkah-langkah kecil kamu hari ini ditemani motivasi dari masa depan.
+          </p>
+          <ul class="space-y-3 text-xs text-brand-body">
+            <li class="flex items-start gap-2 bg-brand-main p-3 rounded-xl border border-brand-border/50">
+              <span class="text-brand-navy font-bold">•</span>
+              <div><strong class="text-brand-navy font-semibold">Jadwal & Alarm Fleksibel:</strong> Atur tugas harian dengan jam alarm presisi dan pilihan hari berulang.</div>
+            </li>
+            <li class="flex items-start gap-2 bg-brand-main p-3 rounded-xl border border-brand-border/50">
+              <span class="text-brand-navy font-bold">•</span>
+              <div><strong class="text-brand-navy font-semibold">Ringkasan Progres:</strong> Indikator persentase harian dan catatan dorongan semangat hangat dari AI.</div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- FITUR 5: Kapsul Waktu (Time Capsule) -->
+        <div class="bento-card bg-white rounded-3xl p-7 sm:p-8 border border-brand-border relative overflow-hidden group">
+          <div class="w-12 h-12 rounded-2xl bg-brand-soft text-brand-navy flex items-center justify-center text-xl mb-5 shadow-xs">
+            ⏳
+          </div>
+          <span class="text-xs font-semibold px-3 py-1 bg-brand-soft/70 text-brand-navy rounded-full border border-brand-border inline-block mb-3">
+            Kapsul Waktu
+          </span>
+          <h3 class="text-lg sm:text-xl font-semibold text-brand-navy mb-2.5">5. Kapsul Waktu (Time Capsule)</h3>
+          <p class="text-xs sm:text-sm text-brand-body leading-relaxed mb-4">
+            Mengunci pesan, foto, atau video untuk dibuka di masa depan dengan tanggal yang kamu tentukan.
+          </p>
+          <div class="bg-brand-main p-3.5 rounded-xl border border-brand-border/50 text-xs text-brand-body">
+            <p class="font-medium text-brand-navy mb-1">🔒 Terkunci Hingga Tanggal Target</p>
+            <p>Tidak bisa dibuka lebih awal demi menjaga kejujuran dan esensi emosional saat membukanya nanti.</p>
+          </div>
+        </div>
+
+        <!-- FITUR 6 (Spans 2 cols on lg): Visualisasi Konsistensi & Rekap Emosi -->
+        <div class="lg:col-span-2 bento-card bg-white rounded-3xl p-7 sm:p-8 border border-brand-border relative overflow-hidden group">
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-12 h-12 rounded-2xl bg-[#E8F7E8] text-brand-sprout flex items-center justify-center text-xl shadow-xs">
+              🌱
+            </div>
+            <span class="text-xs font-semibold px-3 py-1 bg-[#E8F7E8] text-brand-sprout rounded-full border border-brand-sprout/20">
+              Konsistensi & Pertumbuhan
+            </span>
+          </div>
+
+          <h3 class="text-xl sm:text-2xl font-semibold text-brand-navy mb-3">6. Visualisasi Konsistensi & Rekap Emosi</h3>
+          <p class="text-sm sm:text-base text-brand-body leading-relaxed mb-6">
+            Melihat proses bertumbuh yang nyata lewat metafora visual dan analisis perkembangan suasana hati berkala.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="bg-brand-main p-4 rounded-2xl border border-brand-border/70">
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class="text-brand-sprout font-bold">🌿</span>
+                <h4 class="text-xs sm:text-sm font-semibold text-brand-navy">Pohon Kehidupan & Streak</h4>
+              </div>
+              <p class="text-xs text-brand-body leading-relaxed">
+                Konsistensi menulis digambarkan lewat pohon visual yang makin lebat seiring hari, dari tunas mungil hingga rimbun.
+              </p>
+            </div>
+
+            <div class="bg-brand-main p-4 rounded-2xl border border-brand-border/70">
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class="text-brand-navy font-bold">📊</span>
+                <h4 class="text-xs sm:text-sm font-semibold text-brand-navy">Rekap Mingguan & Bulanan</h4>
+              </div>
+              <p class="text-xs text-brand-body leading-relaxed">
+                Rangkuman perkembangan pola pikir, suasana hati, serta tantangan hidup yang berhasil kamu lalui dengan tangguh.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FITUR 7: Pengingat Cerdas -->
+        <div class="bento-card bg-white rounded-3xl p-7 sm:p-8 border border-brand-border relative overflow-hidden group">
+          <div class="w-12 h-12 rounded-2xl bg-brand-soft text-brand-navy flex items-center justify-center text-xl mb-5 shadow-xs">
+            🔔
+          </div>
+          <span class="text-xs font-semibold px-3 py-1 bg-brand-soft/70 text-brand-navy rounded-full border border-brand-border inline-block mb-3">
+            Pengingat
+          </span>
+          <h3 class="text-lg sm:text-xl font-semibold text-brand-navy mb-2.5">7. Pengingat Cerdas</h3>
+          <p class="text-xs sm:text-sm text-brand-body leading-relaxed mb-4">
+            Mengingatkanmu secara lembut tanpa merasa diteror notifikasi.
+          </p>
+          <ul class="space-y-3 text-xs text-brand-body">
+            <li class="flex items-start gap-2 bg-brand-main p-3 rounded-xl border border-brand-border/50">
+              <span class="text-brand-navy font-bold">•</span>
+              <div><strong class="text-brand-navy font-semibold">Jam Fleksibel:</strong> Pengingat 1–3 kali sehari pada jam yang bisa disesuaikan dengan ritmemu.</div>
+            </li>
+            <li class="flex items-start gap-2 bg-brand-main p-3 rounded-xl border border-brand-border/50">
+              <span class="text-brand-navy font-bold">•</span>
+              <div><strong class="text-brand-navy font-semibold">Pemicu Cas Malam:</strong> Notifikasi lembut saat ponsel mulai diisi daya di malam hari untuk refleksi sebelum tidur.</div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- FITUR EXTRA: Pilihan Tema Estetik (Biru Pastel, Pink Pastel, Gelap) -->
+        <div class="lg:col-span-3 bento-card bg-gradient-to-r from-white via-brand-main to-white rounded-3xl p-6 sm:p-8 border border-brand-border relative overflow-hidden group">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-brand-navy text-white flex items-center justify-center text-xl shadow-xs flex-shrink-0">
+                🎨
+              </div>
+              <div>
+                <span class="text-xs font-semibold px-3 py-1 bg-brand-soft text-brand-navy rounded-full border border-brand-border inline-block mb-1.5">
+                  Kustomisasi Tampilan
+                </span>
+                <h3 class="text-lg sm:text-xl font-semibold text-brand-navy">Tiga Pilihan Tema Warna Estetik</h3>
+                <p class="text-xs sm:text-sm text-brand-body mt-1">
+                  Sesuaikan mood menulis dan kenyamanan matamu kapan saja lewat menu Pengaturan.
+                </p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full md:w-auto flex-shrink-0">
+              <!-- Biru Pastel -->
+              <div class="flex items-center gap-2.5 bg-white px-4 py-2.5 rounded-2xl border border-brand-border shadow-xs">
+                <span class="w-4 h-4 rounded-full bg-[#8DB8E8] border border-white shadow-xs"></span>
+                <div>
+                  <p class="text-xs font-semibold text-brand-navy">Biru Pastel</p>
+                  <p class="text-[10px] text-brand-body">Tenang & Damai</p>
+                </div>
+              </div>
+
+              <!-- Pink Pastel -->
+              <div class="flex items-center gap-2.5 bg-white px-4 py-2.5 rounded-2xl border border-[#FBCFE8] shadow-xs">
+                <span class="w-4 h-4 rounded-full bg-[#F472B6] border border-white shadow-xs"></span>
+                <div>
+                  <p class="text-xs font-semibold text-brand-navy">Pink Pastel</p>
+                  <p class="text-[10px] text-brand-body">Hangat & Manis</p>
+                </div>
+              </div>
+
+              <!-- Tema Gelap -->
+              <div class="flex items-center gap-2.5 bg-[#1E293B] px-4 py-2.5 rounded-2xl border border-slate-700 shadow-xs text-white">
+                <span class="w-4 h-4 rounded-full bg-[#38BDF8] border border-slate-600 shadow-xs"></span>
+                <div>
+                  <p class="text-xs font-semibold text-white">Tema Gelap</p>
+                  <p class="text-[10px] text-slate-300">Ramah Mata Malam</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- SECTION 2: GALERI APLIKASI (CAROUSEL DENGAN SCREENSHOT REAL)         -->
+    <!-- ==================================================================== -->
+    <section id="galeri" class="py-16 sm:py-24 px-2 sm:px-4 reveal-on-scroll">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+        <span class="inline-block text-xs font-semibold uppercase tracking-wider text-brand-navy bg-brand-soft px-3.5 py-1.5 rounded-full mb-3 border border-brand-border">
+          Tampilan Antarmuka
+        </span>
+        <h2 class="font-editorial text-3xl sm:text-4xl md:text-5xl text-brand-navy tracking-tight">
+          Galeri Aplikasi <span class="italic font-normal">FutureMe</span>
+        </h2>
+        <p class="text-brand-body text-sm sm:text-base mt-4 leading-relaxed">
+          Intip antarmuka bersih dan tenang berbalut nuansa biru pastel yang dirancang agar pikiranmu tetap jernih.
+        </p>
+      </div>
+
+      <!-- Carousel Container -->
+      <div class="relative max-w-6xl mx-auto">
+        
+        <!-- Controls: Prev & Next Buttons -->
+        <div class="flex items-center justify-between mb-4 px-2">
+          <div class="text-xs font-semibold text-brand-navy uppercase tracking-wider flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-brand-sprout"></span>
+            <span>Geser untuk melihat semua layar</span>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button id="gallery-prev" aria-label="Lihat tangkapan layar sebelumnya" class="w-10 h-10 rounded-full bg-white border border-brand-border text-brand-navy shadow-sm hover:bg-brand-soft hover:border-brand-primary flex items-center justify-center transition-all">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+              </svg>
+            </button>
+            <button id="gallery-next" aria-label="Lihat tangkapan layar berikutnya" class="w-10 h-10 rounded-full bg-white border border-brand-border text-brand-navy shadow-sm hover:bg-brand-soft hover:border-brand-primary flex items-center justify-center transition-all">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Scrollable Track Container -->
+        <div class="overflow-x-auto no-scrollbar py-6 px-4">
+          <div id="gallery-track" class="flex gap-6 sm:gap-8 items-center cursor-grab active:cursor-grabbing w-max mx-auto">
+
+            <!-- Slide 1: Beranda -->
+            <div class="gallery-slide w-[240px] sm:w-[270px] flex-shrink-0 transition-all duration-300 transform scale-100 opacity-100">
+              <div class="phone-mockup shadow-xl hover:shadow-2xl transition-all duration-300">
+                <img src="assets/images/beranda.png" alt="Layar Beranda FutureMe" class="w-full h-auto block" loading="lazy">
+              </div>
+              <p class="text-center text-xs font-semibold text-brand-navy mt-3">Beranda Utama</p>
+            </div>
+
+            <!-- Slide 2: Rencana -->
+            <div class="gallery-slide w-[240px] sm:w-[270px] flex-shrink-0 transition-all duration-300 transform scale-95 opacity-50">
+              <div class="phone-mockup shadow-xl hover:shadow-2xl transition-all duration-300">
+                <img src="assets/images/rencana.png" alt="Layar Rencana & To-Do" class="w-full h-auto block" loading="lazy">
+              </div>
+              <p class="text-center text-xs font-semibold text-brand-navy mt-3">Rencana & To-Do</p>
+            </div>
+
+            <!-- Slide 3: Tanya -->
+            <div class="gallery-slide w-[240px] sm:w-[270px] flex-shrink-0 transition-all duration-300 transform scale-95 opacity-50">
+              <div class="phone-mockup shadow-xl hover:shadow-2xl transition-all duration-300">
+                <img src="assets/images/tanya.png" alt="Layar Tanya Diri Masa Depan" class="w-full h-auto block" loading="lazy">
+              </div>
+              <p class="text-center text-xs font-semibold text-brand-navy mt-3">Tanya Masa Depan</p>
+            </div>
+
+            <!-- Slide 4: Rekap -->
+            <div class="gallery-slide w-[240px] sm:w-[270px] flex-shrink-0 transition-all duration-300 transform scale-95 opacity-50">
+              <div class="phone-mockup shadow-xl hover:shadow-2xl transition-all duration-300">
+                <img src="assets/images/rekap.png" alt="Layar Cerita Perjalanan & Rekap" class="w-full h-auto block" loading="lazy">
+              </div>
+              <p class="text-center text-xs font-semibold text-brand-navy mt-3">Rekap & Heatmap</p>
+            </div>
+
+            <!-- Slide 5: Aku -->
+            <div class="gallery-slide w-[240px] sm:w-[270px] flex-shrink-0 transition-all duration-300 transform scale-95 opacity-50">
+              <div class="phone-mockup shadow-xl hover:shadow-2xl transition-all duration-300">
+                <img src="assets/images/aku.png" alt="Layar Ruang Pengenal Aku" class="w-full h-auto block" loading="lazy">
+              </div>
+              <p class="text-center text-xs font-semibold text-brand-navy mt-3">Ruang Pengenal Aku</p>
+            </div>
+
+            <!-- Slide 6: Profil -->
+            <div class="gallery-slide w-[240px] sm:w-[270px] flex-shrink-0 transition-all duration-300 transform scale-95 opacity-50">
+              <div class="phone-mockup shadow-xl hover:shadow-2xl transition-all duration-300">
+                <img src="assets/images/profil.png" alt="Layar Profil & Gaya Bahasa si Futures" class="w-full h-auto block" loading="lazy">
+              </div>
+              <p class="text-center text-xs font-semibold text-brand-navy mt-3">Profil & Kepribadian</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Dynamic Caption Box -->
+        <div class="max-w-xl mx-auto mt-6 bg-white rounded-2xl p-5 border border-brand-border text-center shadow-xs">
+          <h4 id="gallery-caption-title" class="text-base font-semibold text-brand-navy">1. Beranda (Home & Sapaan)</h4>
+          <p id="gallery-caption-desc" class="text-xs sm:text-sm text-brand-body mt-1 leading-relaxed">
+            Sapaan hangat dari versi masa depanmu, pohon pertumbuhan yang terus bersemi, dan kartu input cerita harian cepat.
+          </p>
+          
+          <!-- Indicator Dots -->
+          <div class="flex items-center justify-center gap-2 mt-4">
+            <button class="gallery-dot w-8 h-2.5 rounded-full bg-brand-navy transition-all" aria-label="Lompat ke slide 1"></button>
+            <button class="gallery-dot w-2.5 h-2.5 rounded-full bg-brand-border hover:bg-brand-primary transition-all" aria-label="Lompat ke slide 2"></button>
+            <button class="gallery-dot w-2.5 h-2.5 rounded-full bg-brand-border hover:bg-brand-primary transition-all" aria-label="Lompat ke slide 3"></button>
+            <button class="gallery-dot w-2.5 h-2.5 rounded-full bg-brand-border hover:bg-brand-primary transition-all" aria-label="Lompat ke slide 4"></button>
+            <button class="gallery-dot w-2.5 h-2.5 rounded-full bg-brand-border hover:bg-brand-primary transition-all" aria-label="Lompat ke slide 5"></button>
+            <button class="gallery-dot w-2.5 h-2.5 rounded-full bg-brand-border hover:bg-brand-primary transition-all" aria-label="Lompat ke slide 6"></button>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- SECTION 3: CARA KERJA (3 LANGKAH)                                    -->
+    <!-- ==================================================================== -->
+    <section id="cara-kerja" class="py-16 sm:py-24 px-2 sm:px-4 reveal-on-scroll">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        <span class="inline-block text-xs font-semibold uppercase tracking-wider text-brand-navy bg-brand-soft px-3.5 py-1.5 rounded-full mb-3 border border-brand-border">
+          Langkah Mudah
+        </span>
+        <h2 class="font-editorial text-3xl sm:text-4xl md:text-5xl text-brand-navy tracking-tight">
+          Cara Kerja <span class="italic font-normal">FutureMe</span>
+        </h2>
+        <p class="text-brand-body text-sm sm:text-base mt-4 leading-relaxed">
+          Tiga langkah sederhana untuk memulai persahabatan hangat dengan dirimu di masa depan.
+        </p>
+      </div>
+
+      <!-- 3 Steps Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto relative">
+        
+        <!-- Step 1 -->
+        <div class="bg-white rounded-3xl p-7 sm:p-8 border border-brand-border shadow-xs hover:shadow-md transition-all relative flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="w-10 h-10 rounded-2xl bg-brand-navy text-white text-sm font-bold flex items-center justify-center shadow-sm">
+                01
+              </span>
+              <span class="text-2xl">🌱</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-semibold text-brand-navy mb-3">
+              Isi profil & pilih gaya Futures
+            </h3>
+            <p class="text-xs sm:text-sm text-brand-body leading-relaxed">
+              Tuliskan nama panggilanmu, apa impian setahun ke depan, dan pilih kepribadian si Futures: apakah santai (gue-lu), teman akrab, atau tenang adem.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brand-border/60 text-[11px] font-medium text-brand-navy flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-sprout"></span>
+            <span>Kustomisasi Tanpa Batas</span>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-white rounded-3xl p-7 sm:p-8 border border-brand-border shadow-xs hover:shadow-md transition-all relative flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="w-10 h-10 rounded-2xl bg-brand-navy text-white text-sm font-bold flex items-center justify-center shadow-sm">
+                02
+              </span>
+              <span class="text-2xl">✍️</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-semibold text-brand-navy mb-3">
+              Tulis atau bicara tiap hari
+            </h3>
+            <p class="text-xs sm:text-sm text-brand-body leading-relaxed">
+              Jawab pertanyaan harian atau curahkan isi hati. Gunakan ketikan, dikte bicara otomatis, voice note, foto kenangan, atau lagu yang sedang kamu putar.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brand-border/60 text-[11px] font-medium text-brand-navy flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-sprout"></span>
+            <span>Bebas Tekanan & Bebas Kuota</span>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-white rounded-3xl p-7 sm:p-8 border border-brand-border shadow-xs hover:shadow-md transition-all relative flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="w-10 h-10 rounded-2xl bg-brand-navy text-white text-sm font-bold flex items-center justify-center shadow-sm">
+                03
+              </span>
+              <span class="text-2xl">🌳</span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-semibold text-brand-navy mb-3">
+              Lihat pohonmu tumbuh & baca rekapnya
+            </h3>
+            <p class="text-xs sm:text-sm text-brand-body leading-relaxed">
+              Saksikan tunas kecilmu berubah menjadi pohon yang rimbun. Nikmati rekap 30 hari, montase video 1 detik, serta kartu infografis estetik untuk dieksplorasi.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brand-border/60 text-[11px] font-medium text-brand-navy flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-sprout"></span>
+            <span>Kilas Balik Menghangatkan Hati</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- SECTION 4: PRIVASI & KEAMANAN (OFFLINE-FIRST FOCUS)                 -->
+    <!-- ==================================================================== -->
+    <section id="privasi" class="py-16 sm:py-24 px-2 sm:px-4 reveal-on-scroll">
+      
+      <div class="max-w-4xl mx-auto bg-gradient-to-b from-white to-[#F0F6FD] rounded-[36px] sm:rounded-[44px] p-8 sm:p-12 md:p-16 border border-brand-border shadow-lg relative overflow-hidden text-center">
+        
+        <!-- Background Shield Watermark -->
+        <div class="absolute -right-16 -top-16 text-brand-soft/40 pointer-events-none select-none">
+          <svg class="w-80 h-80" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+
+        <!-- Center Shield Badge -->
+        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-3xl bg-brand-soft text-brand-navy mx-auto flex items-center justify-center text-3xl sm:text-4xl mb-6 shadow-md shadow-brand-navy/5 border border-brand-border">
+          🛡️
+        </div>
+
+        <span class="inline-block text-xs font-semibold uppercase tracking-wider text-brand-navy bg-white px-4 py-1.5 rounded-full mb-4 border border-brand-border shadow-xs">
+          Privasi Penuh & Data Lokal
+        </span>
+
+        <h2 class="font-editorial text-3xl sm:text-4xl md:text-5xl text-brand-navy tracking-tight max-w-2xl mx-auto">
+          Catatanmu adalah rahasiamu, <span class="italic font-normal">bukan komoditas.</span>
+        </h2>
+
+        <!-- MANDATORY QUOTE FROM USER PROMPT -->
+        <div class="my-8 max-w-2xl mx-auto bg-white/90 p-5 sm:p-6 rounded-2xl border-2 border-brand-border/80 shadow-xs">
+          <p class="text-sm sm:text-base font-semibold text-brand-navy leading-relaxed">
+            “Seluruh data jurnal dan media tersimpan secara lokal di perangkat demi menjaga privasi penuh.”
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left mt-10">
+          
+          <div class="bg-white/80 p-5 rounded-2xl border border-brand-border">
+            <div class="text-lg mb-2">💾</div>
+            <h4 class="text-sm font-semibold text-brand-navy mb-1.5">Database Lokal</h4>
+            <p class="text-xs text-brand-body leading-relaxed">
+              Semua teks dan rekaman tersimpan langsung di memori ponselmu sendiri secara offline. Tanpa server pihak ketiga.
+            </p>
+          </div>
+
+          <div class="bg-white/80 p-5 rounded-2xl border border-brand-border">
+            <div class="text-lg mb-2">🔑</div>
+            <h4 class="text-sm font-semibold text-brand-navy mb-1.5">API Key Pribadi</h4>
+            <p class="text-xs text-brand-body leading-relaxed">
+              AI terhubung langsung ke Google Gemini dengan kunci milikmu sendiri, gratis selamanya tanpa biaya langganan.
+            </p>
+          </div>
+
+          <div class="bg-white/80 p-5 rounded-2xl border border-brand-border">
+            <div class="text-lg mb-2">✈️</div>
+            <h4 class="text-sm font-semibold text-brand-navy mb-1.5">Offline Pertama</h4>
+            <p class="text-xs text-brand-body leading-relaxed">
+              Aplikasi tetap bisa digunakan secara normal meski dalam mode pesawat atau saat tidak ada sinyal internet.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- SECTION 5: FAQ (ACCORDION DENGAN 3 KATEGORI)                          -->
+    <!-- ==================================================================== -->
+    <section id="faq" class="py-16 sm:py-24 px-2 sm:px-4 reveal-on-scroll">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+        <span class="inline-block text-xs font-semibold uppercase tracking-wider text-brand-navy bg-brand-soft px-3.5 py-1.5 rounded-full mb-3 border border-brand-border">
+          Tanya Jawab
+        </span>
+        <h2 class="font-editorial text-3xl sm:text-4xl md:text-5xl text-brand-navy tracking-tight">
+          Pertanyaan yang Sering <span class="italic font-normal">Diajukan</span>
+        </h2>
+        <p class="text-brand-body text-sm sm:text-base mt-4 leading-relaxed">
+          Temukan jawaban seputar keamanan privasi data, penggunaan API Google Gemini, dan fitur-fitur unik FutureMe.
+        </p>
+      </div>
+
+      <!-- FAQ Category Tabs -->
+      <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10 max-w-2xl mx-auto">
+        <button type="button" data-category="all" class="faq-tab-btn px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium bg-brand-navy text-white shadow-sm border border-transparent transition-all">
+          Semua Pertanyaan
+        </button>
+        <button type="button" data-category="A" class="faq-tab-btn px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium bg-white text-brand-body border border-brand-border hover:border-brand-primary transition-all">
+          Kategori A: Privasi & Keamanan
+        </button>
+        <button type="button" data-category="B" class="faq-tab-btn px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium bg-white text-brand-body border border-brand-border hover:border-brand-primary transition-all">
+          Kategori B: Gemini API & Kuota
+        </button>
+        <button type="button" data-category="C" class="faq-tab-btn px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium bg-white text-brand-body border border-brand-border hover:border-brand-primary transition-all">
+          Kategori C: Fitur Khusus
+        </button>
+      </div>
+
+      <!-- Accordion Items List (Exact Text from Prompt) -->
+      <div class="max-w-3xl mx-auto space-y-4" id="faq-accordion">
+
+        <!-- KATEGORI A: PRIVASI & KEAMANAN -->
+
+        <!-- FAQ 1 -->
+        <div class="faq-item bg-white rounded-2xl border border-brand-border transition-all duration-200" data-category="A">
+          <button type="button" class="faq-header w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-semibold text-brand-navy text-sm sm:text-base">
+            <span class="flex items-center gap-2">
+              <span class="text-xs px-2 py-0.5 rounded bg-brand-soft text-brand-navy font-mono">A1</span>
+              Apakah cerita dan curhatan saya aman dan privat?
+            </span>
+            <span class="faq-icon text-brand-body text-xl flex-shrink-0">↓</span>
+          </button>
+          <div class="faq-content px-5 sm:px-6 pb-6 text-xs sm:text-sm text-brand-body leading-relaxed border-t border-brand-border/40 pt-4">
+            100% aman dan privat. Semua jurnal, foto, dan rekaman suara tersimpan langsung di memori HP kamu sendiri (secara offline). Kami tidak memiliki server penyimpanan dan tidak ada yang bisa membaca catatanmu selain dirimu sendiri.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item bg-white rounded-2xl border border-brand-border transition-all duration-200" data-category="A">
+          <button type="button" class="faq-header w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-semibold text-brand-navy text-sm sm:text-base">
+            <span class="flex items-center gap-2">
+              <span class="text-xs px-2 py-0.5 rounded bg-brand-soft text-brand-navy font-mono">A2</span>
+              Apakah data saya akan hilang kalau HP direstart atau aplikasi di-update?
+            </span>
+            <span class="faq-icon text-brand-body text-xl flex-shrink-0">↓</span>
+          </button>
+          <div class="faq-content px-5 sm:px-6 pb-6 text-xs sm:text-sm text-brand-body leading-relaxed border-t border-brand-border/40 pt-4">
+            Tidak. Semua data tersimpan permanen di database internal dan media privat perangkat. Data hanya akan terhapus jika kamu mencopot (uninstall) aplikasi atau menghapus data aplikasi dari setelan HP.
+          </div>
+        </div>
+
+        <!-- FAQ 3: Google Play Protect -->
+        <div class="faq-item bg-white rounded-2xl border border-brand-border transition-all duration-200" data-category="A">
+          <button type="button" class="faq-header w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-semibold text-brand-navy text-sm sm:text-base">
+            <span class="flex items-center gap-2">
+              <span class="text-xs px-2 py-0.5 rounded bg-brand-soft text-brand-navy font-mono">A3</span>
+              Kenapa Google Play Protect mendeteksi app ini mengambil data atau memblokir saat instalasi?
+            </span>
+            <span class="faq-icon text-brand-body text-xl flex-shrink-0">↓</span>
+          </button>
+          <div class="faq-content px-5 sm:px-6 pb-6 text-xs sm:text-sm text-brand-body leading-relaxed border-t border-brand-border/40 pt-4 space-y-3">
+            <p>
+              <strong>Aplikasi ini 100% aman dan seluruh data disimpan secara offline di ponselmu sendiri.</strong> Google Play Protect mendeteksi peringatan tersebut semata-mata karena FutureMe memiliki fitur pendeteksi musik (fitur <em>Soundtrack Hidup</em>) yang membaca judul lagu yang sedang berputar di Spotify atau YouTube Music saat menulis jurnal. Izin tersebut murni hanya membaca lagu saja, dan itu pun baru aktif jika diberikan izin oleh pengguna.
+            </p>
+            <div class="bg-brand-main p-4 rounded-xl border border-brand-border/80">
+              <p class="font-semibold text-brand-navy mb-2 text-xs sm:text-sm">🛠️ Cara mengatasi jika Google Play Protect memblokir saat instalasi APK:</p>
+              <ol class="list-decimal list-inside space-y-1.5 text-xs text-brand-body">
+                <li>Bila muncul notifikasi Play Protect di layar, ketuk <strong>"Rincian Lebih Lanjut"</strong> lalu pilih <strong>"Tetap Instal" (Install anyway)</strong>.</li>
+                <li>Jika tombol tersebut tidak muncul atau instalasi otomatis dibatalkan: Buka aplikasi <strong>Google Play Store</strong> di ponselmu.</li>
+                <li>Ketuk <strong>ikon profil akun</strong> di pojok kanan atas, lalu pilih menu <strong>Play Protect</strong>.</li>
+                <li>Ketuk <strong>ikon roda gigi (Setelan)</strong> di pojok kanan atas.</li>
+                <li><strong>Jeda atau nonaktifkan sementara</strong> opsi <em>"Pindai aplikasi dengan Play Protect"</em>.</li>
+                <li>Kembali buka file APK FutureMe dan lakukan instalasi kembali hingga selesai.</li>
+                <li>Setelah terpasang, kamu bisa mengaktifkan kembali Play Protect di Play Store.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- KATEGORI B: GOOGLE GEMINI API & KUOTA -->
+
+        <!-- FAQ 3 -->
+        <div class="faq-item bg-white rounded-2xl border border-brand-border transition-all duration-200" data-category="B">
+          <button type="button" class="faq-header w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-semibold text-brand-navy text-sm sm:text-base">
+            <span class="flex items-center gap-2">
+              <span class="text-xs px-2 py-0.5 rounded bg-brand-soft text-brand-navy font-mono">B1</span>
+              Kenapa butuh Google Gemini API Key dan apakah ini berbayar?
+            </span>
+            <span class="faq-icon text-brand-body text-xl flex-shrink-0">↓</span>
+          </button>
+          <div class="faq-content px-5 sm:px-6 pb-6 text-xs sm:text-sm text-brand-body leading-relaxed border-t border-brand-border/40 pt-4">
+            Fitur AI di FutureMe menggunakan API Key pribadimu agar aplikasinya bisa digunakan secara 100% gratis selamanya tanpa biaya langganan. Google AI Studio memberikan kuota gratis (Free Tier) yang sangat melimpah untuk penggunaan pribadi.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item bg-white rounded-2xl border border-brand-border transition-all duration-200" data-category="B">
+          <button type="button" class="faq-header w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-semibold text-brand-navy text-sm sm:text-base">
+            <span class="flex items-center gap-2">
+              <span class="text-xs px-2 py-0.5 rounded bg-brand-soft text-brand-navy font-mono">B2</span>
+              Bagaimana cara mendapatkan Google Gemini API Key secara gratis?
+            </span>
+            <span class="faq-icon text-brand-body text-xl flex-shrink-0">↓</span>
+          </button>
+          <div class="faq-content px-5 sm:px-6 pb-6 text-xs sm:text-sm text-brand-body leading-relaxed border-t border-brand-border/40 pt-4">
+            Buka situs aistudio.google.com lewat browser, login dengan akun Google-mu, klik "Get API Key", salin kuncinya, lalu tempel di menu Pengaturan aplikasi ini. Hanya butuh waktu 1 menit!
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item bg-white rounded-2xl border border-brand-border transition-all duration-200" data-category="B">
+          <button type="button" class="faq-header w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-semibold text-brand-navy text-sm sm:text-base">
+            <span class="flex items-center gap-2">
+              <span class="text-xs px-2 py-0.5 rounded bg-brand-soft text-brand-navy font-mono">B3</span>
+              Apakah kuota API saya akan cepat habis?
+            </span>
+            <span class="faq-icon text-brand-body text-xl flex-shrink-0">↓</span>
+          </button>
+          <div class="faq-content px-5 sm:px-6 pb-6 text-xs sm:text-sm text-brand-body leading-relaxed border-t border-brand-border/40 pt-4">
+            Tidak. Aplikasi ini dirancang sangat hemat kuota: motivasi hanya diperbarui 6 jam sekali, dan teks prompt telah dioptimasi ringkas.
+          </div>
+        </div>
+
+        <!-- KATEGORI C: FITUR-FITUR KHUSUS -->
+
+        <!-- FAQ 6 -->
+        <div class="faq-item bg-white rounded-2xl border border-brand-border transition-all duration-200" data-category="C">
+          <button type="button" class="faq-header w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-semibold text-brand-navy text-sm sm:text-base">
+            <span class="flex items-center gap-2">
+              <span class="text-xs px-2 py-0.5 rounded bg-brand-soft text-brand-navy font-mono">C1</span>
+              Apa perbedaan "Pertanyaan Hari Ini" dan "Tanya Diri Masa Depan"?
+            </span>
+            <span class="faq-icon text-brand-body text-xl flex-shrink-0">↓</span>
+          </button>
+          <div class="faq-content px-5 sm:px-6 pb-6 text-xs sm:text-sm text-brand-body leading-relaxed border-t border-brand-border/40 pt-4">
+            Pertanyaan Hari Ini adalah pesan pemantik dari masa depan untuk mengajakmu mencatat harimu. Tanya Diri Masa Depan adalah tempatmu bertanya ketika sedang galau, bingung, atau menghadapi dilema hidup ke versimu yang lebih matang 5 tahun ke depan.
+          </div>
+        </div>
+
+        <!-- FAQ 7 -->
+        <div class="faq-item bg-white rounded-2xl border border-brand-border transition-all duration-200" data-category="C">
+          <button type="button" class="faq-header w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-semibold text-brand-navy text-sm sm:text-base">
+            <span class="flex items-center gap-2">
+              <span class="text-xs px-2 py-0.5 rounded bg-brand-soft text-brand-navy font-mono">C2</span>
+              Bagaimana cara kerja Kapsul Waktu? Bisakah dibuka lebih awal?
+            </span>
+            <span class="faq-icon text-brand-body text-xl flex-shrink-0">↓</span>
+          </button>
+          <div class="faq-content px-5 sm:px-6 pb-6 text-xs sm:text-sm text-brand-body leading-relaxed border-t border-brand-border/40 pt-4">
+            Kapsul Waktu mengunci pesan atau fotomu hingga tanggal yang kamu tentukan. Kapsul tidak bisa dibuka sebelum tanggal target demi menjaga kejujuran dan esensi emosional saat membukanya nanti.
+          </div>
+        </div>
+
+        <!-- FAQ 8 -->
+        <div class="faq-item bg-white rounded-2xl border border-brand-border transition-all duration-200" data-category="C">
+          <button type="button" class="faq-header w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-semibold text-brand-navy text-sm sm:text-base">
+            <span class="flex items-center gap-2">
+              <span class="text-xs px-2 py-0.5 rounded bg-brand-soft text-brand-navy font-mono">C3</span>
+              Bagaimana cara kerja Kompilasi Video 1 Detik?
+            </span>
+            <span class="faq-icon text-brand-body text-xl flex-shrink-0">↓</span>
+          </button>
+          <div class="faq-content px-5 sm:px-6 pb-6 text-xs sm:text-sm text-brand-body leading-relaxed border-t border-brand-border/40 pt-4">
+            Kamu bisa melampirkan klip video 1 detik di setiap catatan harian. Di akhir bulan atau tahun, aplikasi akan otomatis merangkai potongan-potongan tersebut menjadi film dokumenter perjalanan hidupmu!
+          </div>
+        </div>
+
+        <!-- FAQ 9 -->
+        <div class="faq-item bg-white rounded-2xl border border-brand-border transition-all duration-200" data-category="C">
+          <button type="button" class="faq-header w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-semibold text-brand-navy text-sm sm:text-base">
+            <span class="flex items-center gap-2">
+              <span class="text-xs px-2 py-0.5 rounded bg-brand-soft text-brand-navy font-mono">C4</span>
+              Kenapa lagu yang saya dengar di Spotify / YouTube Music tidak otomatis tercatat?
+            </span>
+            <span class="faq-icon text-brand-body text-xl flex-shrink-0">↓</span>
+          </button>
+          <div class="faq-content px-5 sm:px-6 pb-6 text-xs sm:text-sm text-brand-body leading-relaxed border-t border-brand-border/40 pt-4">
+            Pastikan kamu sudah memberikan izin "Akses Notifikasi" di menu Pengaturan aplikasi agar FutureMe bisa mendeteksi judul lagu yang sedang berputar di ponselmu saat kamu menulis jurnal.
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- SECTION 6: CTA PENUTUP                                               -->
+    <!-- ==================================================================== -->
+    <section id="unduh" class="py-12 sm:py-20 px-2 sm:px-4 reveal-on-scroll">
+      
+      <div class="hero-outer-frame rounded-[36px] sm:rounded-[48px] p-8 sm:p-14 md:p-16 text-center relative overflow-hidden">
+        
+        <!-- Glowing Ambient Circles -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[300px] bg-brand-glow/40 blur-[90px] rounded-full pointer-events-none -z-0"></div>
+
+        <div class="relative z-10 max-w-2xl mx-auto">
+          
+          <div class="w-14 h-14 rounded-2xl bg-brand-navy text-white mx-auto flex items-center justify-center text-2xl mb-6 shadow-md shadow-brand-navy/20">
+            🌱
+          </div>
+
+          <h2 class="font-editorial text-3xl sm:text-5xl md:text-6xl text-brand-navy tracking-tight leading-tight">
+            Mulai ngobrol dengan dirimu <span class="italic font-normal block sm:inline">di masa depan.</span>
+          </h2>
+
+          <p class="text-brand-body text-sm sm:text-base md:text-lg mt-5 leading-relaxed">
+            Ambil jeda sejenak hari ini. Curahkan ceritamu, pantau pertumbuhan tunasmu, dan rasakan kehadiran versi terbaik dirimu.
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center gap-4 mt-8">
+            <button type="button" class="download-trigger btn-primary px-8 py-4 rounded-full text-sm font-semibold flex items-center gap-2 shadow-xl shadow-brand-navy/20">
+              <svg class="w-5 h-5 text-brand-sprout" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.59L8.71 12.3a1 1 0 1 1 1.41-1.41L12 12.76l4.88-4.87a1 1 0 1 1 1.41 1.41z"/>
+              </svg>
+              <span>Unduh FutureMe Sekarang ↗</span>
+            </button>
+          </div>
+
+          <!-- Download counter badge in CTA -->
+          <div class="mt-4">
+            <span class="inline-flex items-center gap-2 bg-white/80 border border-brand-border px-4 py-1.5 rounded-full text-xs text-brand-body shadow-xs">
+              <span class="w-2 h-2 rounded-full bg-brand-sprout animate-pulse"></span>
+              <span>Sudah terdownload: <strong class="download-counter text-brand-navy font-bold">0</strong> kali</span>
+            </span>
+          </div>
+
+          <!-- Subtle Trust Pill -->
+          <div class="mt-6 flex flex-wrap items-center justify-center gap-3 text-xs text-brand-body">
+            <span class="inline-flex items-center gap-1.5 bg-white/70 px-3 py-1.5 rounded-full border border-brand-border">
+              ✓ Versi 1.0 (Android)
+            </span>
+            <span class="inline-flex items-center gap-1.5 bg-white/70 px-3 py-1.5 rounded-full border border-brand-border">
+              ✓ 100% Offline-First
+            </span>
+            <span class="inline-flex items-center gap-1.5 bg-white/70 px-3 py-1.5 rounded-full border border-brand-border">
+              ✓ Tanpa Biaya Langganan
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- DEVELOPER, COLLABORATION & SUPPORT (PRAMP)                           -->
+    <!-- ==================================================================== -->
+    <section class="py-6 px-2 sm:px-4 reveal-on-scroll">
+      <div class="max-w-4xl mx-auto bg-white rounded-3xl p-6 sm:p-8 border border-brand-border shadow-xs flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="text-center md:text-left">
+          <div class="inline-flex items-center gap-2 mb-2">
+            <span class="text-xs font-semibold uppercase tracking-wider text-brand-navy bg-brand-soft px-3 py-1 rounded-full">Developer</span>
+            <h3 class="text-base sm:text-lg font-bold text-brand-navy">Pramp</h3>
+          </div>
+          <p class="text-xs sm:text-sm text-brand-navy font-medium leading-relaxed">
+            Untuk Kerjasama bisa hubungi email: <a href="mailto:prmpify@gmail.com" class="text-brand-navy font-bold underline hover:text-brand-primary">prmpify@gmail.com</a>
+          </p>
+          <p class="text-xs text-brand-body mt-1.5">
+            Punya saran dan masukan? Forward ke email: <a href="mailto:prmpify@gmail.com" class="text-brand-body font-medium underline hover:text-brand-navy">prmpify@gmail.com</a>
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-3 flex-shrink-0">
+          <a href="https://saweria.co/Pramps" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#FFF7ED] hover:bg-[#FFEDD5] border border-[#FDBA74] text-[#C2410C] px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all hover:scale-105 shadow-xs">
+            <span>☕ Support Pengembang di Saweria</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- SECTION 7: FOOTER                                                    -->
+    <!-- ==================================================================== -->
+    <footer class="mt-4 pb-12 pt-6 px-4 sm:px-8 border-t border-brand-border/60">
+      
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        
+        <!-- Left: Logo & Tagline -->
+        <div class="flex flex-col sm:flex-row items-center gap-3">
+          <div class="w-9 h-9 rounded-xl overflow-hidden bg-brand-navy p-1 shadow-sm border border-brand-border">
+            <img src="assets/images/logo-futureme.png" alt="Logo FutureMe" class="w-full h-full object-cover rounded-lg">
+          </div>
+          <div>
+            <div class="flex items-center justify-center sm:justify-start gap-1">
+              <span class="text-base font-semibold text-brand-navy">FutureMe</span>
+              <span class="text-brand-sprout text-xs">🌱</span>
+            </div>
+            <p class="text-xs text-brand-body">Jurnal refleksi interaktif bersama versi masa depanmu.</p>
+          </div>
+        </div>
+
+        <!-- Center: Quick Nav Links -->
+        <div class="flex flex-wrap items-center justify-center gap-5 text-xs text-brand-body font-medium">
+          <a href="#fitur" class="hover:text-brand-navy transition-colors">Fitur</a>
+          <a href="#galeri" class="hover:text-brand-navy transition-colors">Galeri</a>
+          <a href="#cara-kerja" class="hover:text-brand-navy transition-colors">Cara Kerja</a>
+          <a href="#privasi" class="hover:text-brand-navy transition-colors">Privasi</a>
+          <a href="#faq" class="hover:text-brand-navy transition-colors">FAQ</a>
+        </div>
+
+        <!-- Right: Made with sprout quote (Mandatory) -->
+        <div class="text-xs text-brand-navy font-medium">
+          Dibuat dengan 🌱 untuk versi terbaikmu oleh Pramp.
+        </div>
+
+      </div>
+
+      <!-- Copyright bottom -->
+      <div class="max-w-6xl mx-auto mt-6 pt-4 border-t border-brand-border/40 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-brand-body/80">
+        <p>© 2026 FutureMe. Seluruh hak cipta dilindungi.</p>
+        <p>Aplikasi jurnal refleksi offline-first dengan integrasi Google Gemini API.</p>
+      </div>
+
+    </footer>
+
+  </div>
+  <!-- /MAIN WRAPPER CONTAINER -->
+
+  <!-- ====================================================================== -->
+  <!-- MOBILE MENU DRAWER (SLIDE-OVER)                                        -->
+  <!-- ====================================================================== -->
+  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-brand-navy/30 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  
+  <div id="mobile-menu" class="fixed top-0 right-0 bottom-0 w-[290px] bg-white z-50 shadow-2xl p-6 flex flex-col justify-between translate-x-full transition-transform duration-300 ease-in-out border-l border-brand-border">
+    <div>
+      <div class="flex items-center justify-between pb-5 border-b border-brand-border">
+        <div class="flex items-center gap-2">
+          <img src="assets/images/logo-futureme.png" alt="FutureMe" class="w-8 h-8 rounded-xl object-cover">
+          <span class="font-semibold text-brand-navy">FutureMe</span>
+        </div>
+        <button id="mobile-menu-close" aria-label="Tutup Menu" class="w-8 h-8 rounded-full bg-brand-soft flex items-center justify-center text-brand-navy text-sm font-bold">
+          ✕
+        </button>
+      </div>
+
+      <nav class="flex flex-col gap-2 mt-6">
+        <a href="#fitur" class="mobile-nav-link text-sm font-medium text-brand-body hover:text-brand-navy hover:bg-brand-soft/50 px-4 py-2.5 rounded-xl transition-all">Fitur</a>
+        <a href="#galeri" class="mobile-nav-link text-sm font-medium text-brand-body hover:text-brand-navy hover:bg-brand-soft/50 px-4 py-2.5 rounded-xl transition-all">Galeri Layar</a>
+        <a href="#cara-kerja" class="mobile-nav-link text-sm font-medium text-brand-body hover:text-brand-navy hover:bg-brand-soft/50 px-4 py-2.5 rounded-xl transition-all">Cara Kerja</a>
+        <a href="#privasi" class="mobile-nav-link text-sm font-medium text-brand-body hover:text-brand-navy hover:bg-brand-soft/50 px-4 py-2.5 rounded-xl transition-all">Privasi & Keamanan</a>
+        <a href="#faq" class="mobile-nav-link text-sm font-medium text-brand-body hover:text-brand-navy hover:bg-brand-soft/50 px-4 py-2.5 rounded-xl transition-all">FAQ</a>
+      </nav>
+    </div>
+
+    <div class="pt-6 border-t border-brand-border space-y-3">
+      <a href="#unduh" class="download-trigger mobile-nav-link w-full py-3 rounded-full bg-brand-navy text-white text-xs font-semibold flex items-center justify-center gap-2 shadow-md">
+        <span>Unduh Aplikasi</span>
+        <span>↗</span>
+      </a>
+      <p class="text-[11px] text-center text-brand-body">
+        Dibuat dengan 🌱 untuk versi terbaikmu.
+      </p>
+    </div>
+  </div>
+
+  <!-- ====================================================================== -->
+  <!-- DOWNLOAD MODAL / DIALOG                                                -->
+  <!-- ====================================================================== -->
+  <div id="download-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+    <div id="modal-backdrop" class="fixed inset-0 bg-brand-navy/40 backdrop-blur-sm"></div>
+
+    <div class="modal-dialog relative bg-white w-full max-w-md rounded-[32px] p-6 sm:p-8 shadow-2xl border border-brand-border z-10 scale-95 transform transition-transform duration-300">
+      
+      <!-- Close button -->
+      <button class="modal-close absolute top-5 right-5 w-8 h-8 rounded-full bg-brand-soft flex items-center justify-center text-brand-navy hover:bg-brand-primary/30 transition-colors" aria-label="Tutup jendela">
+        ✕
+      </button>
+
+      <!-- Modal Header -->
+      <div class="flex items-center gap-3.5 mb-4">
+        <div class="w-12 h-12 rounded-2xl bg-brand-navy p-1 shadow-md">
+          <img src="assets/images/logo-futureme.png" alt="FutureMe Icon" class="w-full h-full object-cover rounded-xl">
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-brand-navy">Unduh FutureMe</h3>
+          <p class="text-xs text-brand-body">Android APK • v1.0.0 • 10.8 MB • 100% Gratis</p>
+        </div>
+      </div>
+
+      <!-- Live Download Counter Badge inside Modal -->
+      <div class="bg-brand-main px-4 py-2 rounded-2xl border border-brand-border text-center mb-4">
+        <p class="text-xs text-brand-body">
+          🔥 Sudah terdownload: <strong class="download-counter text-brand-navy font-bold text-sm">0</strong> kali
+        </p>
+      </div>
+
+      <!-- Quick Steps Guide -->
+      <div class="bg-brand-main p-4 rounded-2xl border border-brand-border text-xs text-brand-body space-y-2 mb-3">
+        <p class="font-semibold text-brand-navy">Panduan Instalasi Cepat:</p>
+        <ol class="list-decimal list-inside space-y-1">
+          <li>Unduh file instalasi <span class="font-medium text-brand-navy">FutureMe.apk</span> (10.8 MB).</li>
+          <li>Buka file di HP & aktifkan <span class="font-medium text-brand-navy">"Izinkan dari sumber ini"</span>.</li>
+          <li>Buka menu <span class="font-medium text-brand-navy">Pengaturan</span> di aplikasi dan masukkan Gemini API Key gratis (lihat FAQ).</li>
+        </ol>
+      </div>
+
+      <!-- Play Protect Warning Note -->
+      <div class="bg-[#FEF9C3]/70 p-3.5 rounded-2xl border border-[#FDE047] text-xs text-[#854D0E] space-y-1 mb-5">
+        <p class="font-semibold flex items-center gap-1.5">
+          <span>🛡️ Catatan Google Play Protect:</span>
+        </p>
+        <p class="leading-relaxed">
+          Jika Play Protect memunculkan peringatan, pilih <strong>"Tetap Instal"</strong> atau jeda pemindaian sementara di Play Store. Aplikasi ini 100% aman & hanya membaca musik saat izin diberikan (detail lengkap ada di FAQ).
+        </p>
+      </div>
+
+      <!-- Download Action -->
+      <div class="space-y-2.5">
+        <a href="FutureMe.apk" download="FutureMe.apk" class="download-trigger-action w-full py-3.5 rounded-full bg-brand-navy hover:bg-[#152B47] text-white text-sm font-semibold flex items-center justify-center gap-2 shadow-lg shadow-brand-navy/20 transition-all">
+          <svg class="w-4 h-4 text-brand-sprout" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/>
+          </svg>
+          <span>Unduh APK Sekarang (10.8 MB)</span>
+        </a>
+
+        <button type="button" class="modal-close w-full py-2.5 rounded-full bg-brand-soft hover:bg-brand-border text-brand-navy text-xs font-semibold transition-all">
+          Nanti Saja
+        </button>
+      </div>
+
+      <p class="text-[11px] text-center text-brand-body mt-4">
+        🔒 Bebas malware, tanpa server pihak ketiga, 100% offline-first.
+      </p>
+
+    </div>
+  </div>
+
+  <!-- Custom Scripts -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>

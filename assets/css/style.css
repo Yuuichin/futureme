@@ -1,0 +1,272 @@
+/* FutureMe - Stylesheet
+   Identity & Color Palette: Blue Pastel
+   Primary: #8DB8E8, Surface: #FFFFFF, Border: #D6E4F5, Navy: #1E3A5F, Body: #5A7090, Sprout: #6BBF6A, Glow: #B9D4F5
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+  --bg-main: #F3F8FE;
+  --bg-gradient-end: #E4EEFB;
+  --surface: #FFFFFF;
+  --surface-border: #D6E4F5;
+  --primary: #8DB8E8;
+  --soft-blue: #DCE9FA;
+  --navy: #1E3A5F;
+  --body-text: #5A7090;
+  --accent-sprout: #6BBF6A;
+  --glow-blue: #B9D4F5;
+  
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: #EEF5FC;
+  color: var(--body-text);
+}
+
+body {
+  overflow-x: hidden;
+  background: radial-gradient(120% 120% at 50% 0%, #F5F9FE 0%, #E7F0FB 100%);
+  min-height: 100vh;
+}
+
+/* Serif Font Class */
+.font-editorial {
+  font-family: var(--font-serif);
+}
+
+/* Outer Glow Frame */
+.hero-outer-frame {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F6FAFE 40%, #EDF4FD 100%);
+  border: 1px solid var(--surface-border);
+  box-shadow: 
+    0 0 0 1px rgba(255, 255, 255, 0.9) inset,
+    0 24px 64px -12px rgba(185, 212, 245, 0.4),
+    0 0 90px 10px rgba(185, 212, 245, 0.5);
+}
+
+/* Glassmorphism Classes */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 
+    0 10px 30px -5px rgba(30, 58, 95, 0.08),
+    0 0 0 1px rgba(214, 228, 245, 0.5);
+}
+
+.glass-orbit {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 
+    0 12px 28px -4px rgba(30, 58, 95, 0.12),
+    0 2px 6px rgba(185, 212, 245, 0.3);
+}
+
+.glass-nav {
+  background: rgba(235, 242, 250, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(214, 228, 245, 0.9);
+}
+
+/* Animations */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 24s linear infinite;
+}
+
+@keyframes floatLeft {
+  0%, 100% {
+    transform: rotate(-5deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(-4deg) translateY(-8px);
+  }
+}
+
+@keyframes floatRight {
+  0%, 100% {
+    transform: rotate(5deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(6deg) translateY(-10px);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.05);
+  }
+}
+
+.animate-float-left {
+  animation: floatLeft 6s ease-in-out infinite;
+}
+
+.animate-float-right {
+  animation: floatRight 7s ease-in-out infinite;
+}
+
+.animate-float-gentle {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Custom Scrollbar for Carousel & Body */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F3F8FE;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBDCF2;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8DB8E8;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Interactive States */
+.btn-primary {
+  background-color: var(--navy);
+  color: #FFFFFF;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-primary:hover {
+  background-color: #152B47;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -4px rgba(30, 58, 95, 0.25);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--navy);
+  border: 1px solid var(--surface-border);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-secondary:hover {
+  background-color: #FFFFFF;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgba(141, 184, 232, 0.3);
+}
+
+/* Phone Mockup Frame */
+.phone-mockup {
+  border-radius: 46px;
+  border: 8px solid #1E3A5F;
+  box-shadow: 
+    0 25px 60px -12px rgba(30, 58, 95, 0.22),
+    0 0 0 1px rgba(255, 255, 255, 0.2) inset,
+    0 1px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  background: #F3F8FE;
+}
+
+.phone-mockup::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 45%);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Bento Card Hover */
+.bento-card {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px -8px rgba(30, 58, 95, 0.1);
+  border-color: #8DB8E8;
+}
+
+/* Accordion Transition */
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  opacity: 0;
+}
+.faq-item.active .faq-content {
+  max-height: 600px;
+  opacity: 1;
+}
+.faq-icon {
+  transition: transform 0.3s ease;
+}
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+/* Modal animation */
+.modal-overlay {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.modal-dialog {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
